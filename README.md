@@ -8,8 +8,6 @@ This project aims to analyze data from an Amazon Seller account based in the UAE
 ## II. Project Objective
 The primary objectives of this project are to:
 - Create a user-friendly dashboard that displays sales trends, correlations, and forecasts sales.
-- Analyze two datasets: one focusing on sales and the other on net profits, to visualize and better understand the impact of Amazon's fees on product profitability.
-- Identify which products yield the highest net profits for sellers, allowing for informed decision-making regarding product focus.
 
 ## III. Data Description
 - **Dataset(s):** Business data sourced from an Amazon Seller account.
@@ -48,6 +46,12 @@ The following libraries are utilized in this project:
 - `sklearn`: For machine learning and model evaluation.
 - `joblib`: For model serialization and deserialization.
 
-## VIII. Getting Started
+## VIII. Outcome
+The following are ongoing unresolved issues
+- Analyze two datasets: one focusing on sales and the other on net profits, to visualize and better understand the impact of Amazon's fees on product profitability.
+- Identify which products yield the highest net profits for sellers, allowing for informed decision-making regarding product focus.
+-  We are working with two documents- excel and data from amazon and/or other platforms. We want to be able to merge the data from different platforms to the excel sheet at the end of every working day, that is Monday to Saturday ( Inventory and calculate net profit.) Consolidate data from different platforms.
+
+## IX. Getting Started
 To run this project locally:
 1. 
