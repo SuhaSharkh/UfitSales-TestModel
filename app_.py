@@ -53,7 +53,7 @@ else:
 
 if df_sales is not None:
     # Proceed with further processing only if df_sales was successfully read
-    st.write("Sales Data Overview:", df_sales.head())
+    #st.write("Sales Data Overview:", df_sales.head())
 
     # Clean 'Date' column
     if 'Date' in df_sales.columns:
