@@ -40,10 +40,20 @@ st.title("Sales Analysis & Forecasting App")
 st.sidebar.title("Upload Your Sales File")
 uploaded_file = st.sidebar.file_uploader("Choose CSV file", type=["csv"])
 
-if uploaded_file:
-    # Read the sales CSV file
+if uploaded_file is not None:
+    # If a file is uploaded, read it
     df_sales = pd.read_csv(uploaded_file, on_bad_lines='skip')
-    #st.write("Sales Data Overview:", df_sales.head())
+else:
+    # If no file is uploaded, attempt to read the default CSV from the repo
+    try:
+        df_sales = pd.read_csv('BusinessReport-9-25-24-SalesTraffic.csv', on_bad_lines='skip')
+    except FileNotFoundError:
+        st.error("The sales data file was not found. Please upload the correct file.")
+        df_sales = None  # Set df_sales to None if the file is not found
+
+if df_sales is not None:
+    # Proceed with further processing only if df_sales was successfully read
+    st.write("Sales Data Overview:", df_sales.head())
 
     # Clean 'Date' column
     if 'Date' in df_sales.columns:
