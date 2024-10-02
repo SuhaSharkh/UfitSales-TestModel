@@ -52,6 +52,5 @@ The following are ongoing unresolved issues
 - Identify which products yield the highest net profits for sellers, allowing for informed decision-making regarding product focus.
 -  We are working with two documents- excel and data from amazon and/or other platforms. We want to be able to merge the data from different platforms to the excel sheet at the end of every working day, that is Monday to Saturday ( Inventory and calculate net profit.) Consolidate data from different platforms.
 
-## IX. Getting Started
-To run this project locally:
-1. 
+## Live App
+Check out the deployed version of the app [here](https://your-streamlit-app-link)](https://ufitsales-testmodel-xh6wmc2nxdhrwwx9vkhrul.streamlit.app/)](https://ufitsales-testmodel-xh6wmc2nxdhrwwx9vkhrul.streamlit.app/).
