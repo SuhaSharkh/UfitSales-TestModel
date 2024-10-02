@@ -235,7 +235,7 @@ if uploaded_file:
     #Prediction Model
     #Issues with Date Column - Debugging for Date - Reloading the File
     # Load your DataFrame 
-    df_sales = pd.read_csv('../Final Project/data/BusinessReport-9-25-24-SalesTraffic.csv')
+    df_sales = pd.read_csv('BusinessReport-9-25-24-SalesTraffic.csv')
 
     # Clean the 'Ordered Product Sales' column
     def clean_sales_data(sales_column):
@@ -404,9 +404,7 @@ if uploaded_file:
     # Add a link to GitHub repo
     st.markdown('[Check out the project on GitHub](https://github.com/SuhaSharkh/UfitSales-TestModel)', unsafe_allow_html=True)
 
-    import streamlit as st
-import joblib
-import pandas as pd
+
 
 # Load your SARIMA model
 model = joblib.load('sarima_model.pkl')
