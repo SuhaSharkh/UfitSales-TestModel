@@ -30,7 +30,7 @@ The approach to accomplish the project objectives includes:
 ## VI. Potential Challenges
 - **Challenges:**
   - Data cleaning may present challenges due to inconsistencies.
-  - Familiarizing with Streamlit for dashboard development. https://github.com/okld/streamlit-elements
+  - Familiarizing with Streamlit for dashboard development. https://github.com/okld/streamlit-elements https://docs.streamlit.io/develop/api-reference
   
 - **Proposed Solutions:**
   - Load and clean each dataset systematically before analysis.
