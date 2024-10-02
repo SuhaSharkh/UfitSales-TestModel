@@ -44,7 +44,7 @@ The following libraries are utilized in this project:
 - `numpy`: For numerical operations.
 - `xgboost`: For predictive modeling.
 - `sklearn`: For machine learning and model evaluation.
-- `joblib`: For model serialization and deserialization.
+- `joblib`: For model loading.
 
 ## VIII. Outcome
 The following are ongoing unresolved issues
