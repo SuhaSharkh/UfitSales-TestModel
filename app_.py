@@ -16,26 +16,6 @@ import streamlit as st
 import statsmodels.api as sm  # Import statsmodels
 import xgboost as xgb
 
-# # Custom CSS for dark theme
-# st.markdown(
-#     """
-#     <style>
-#     body {
-#         background-color: #000000 !important; /* Main background color */
-#         color: #FFFFFF !important; /* Main text color */
-#     }
-#     .stButton>button {
-#         background-color: #F63366; /* Button background color */
-#         color: white; /* Button text color */
-#     }
-#     .sidebar .sidebar-content {
-#         background-color: #1E1E1E; /* Sidebar background color */
-#     }
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-# )
-
 st.title("Sales Analysis & Forecasting App")
 
 # Sidebar for File Uploads
@@ -356,27 +336,6 @@ if uploaded_file:
     else:
         st.warning("The time series is non-stationary. Please check your data.")
 
-    # Fit the XGBoost Model
-    # Prepare data for XGBoost
-    # def create_lagged_features(data, n_lags=1):
-    #     for i in range(1, n_lags + 1):
-    #         data[f'lag_{i}'] = data['y'].shift(i)
-    #     return data.dropna()
-
-    # data_lagged = create_lagged_features(monthly_sales.to_frame(name='y'), n_lags=12)
-    # X = data_lagged.drop('y', axis=1)
-    # y = data_lagged['y']
-    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-    # # Fit the XGBoost Model
-    # xgb_model = XGBRegressor()
-    # xgb_model.fit(X_train, y_train)
-
-    # # Evaluate predictions for XGBoost
-    # xgb_predictions = xgb_model.predict(X_test)
-    # xgb_rmse = mean_squared_error(y_test, xgb_predictions, squared=False)
-    # st.write(f'XGBoost RMSE: {xgb_rmse}')
-    # Create a lag feature
 
 
     from sklearn.metrics import mean_squared_error
@@ -406,11 +365,7 @@ if uploaded_file:
     # Split into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
 
-    # # Initialize and fit the model
-    # xgb_model = XGBRegressor(n_estimators=100, learning_rate=0.1)
-    # xgb_model.fit(X_train, y_train)
-    
-    
+
         # Train the XGBoost model
     xgb_model = xgb.XGBRegressor(objective='reg:squarederror', n_estimators=100, max_depth=5)
     xgb_model.fit(X_train, y_train)
@@ -497,86 +452,6 @@ if uploaded_file:
 
        
 
-
-
-    # # Load your SARIMA model
-    # model = joblib.load('sarima_model.pkl')
-
-    # def make_prediction(n_steps):
-    #     # Forecasting with the SARIMA model
-    #     forecast = model.get_forecast(steps=n_steps)
-    #     predicted_values = forecast.predicted_mean
-    #     return predicted_values
-
-    # Streamlit Layout
-    # st.title("Sales Forecasting App")
-
-    # # User input for forecasting
-    # date_input = st.date_input("Select a date for prediction:")
-    # n_steps = st.number_input("Number of months to forecast:", min_value=1, max_value=24, value=12)
-
-    # if st.button("Make Prediction"):
-    #     # Make prediction
-    #     prediction = make_prediction(n_steps)
-
-    #     # Create a date range for the forecast
-    #     forecast_dates = pd.date_range(start=date_input, periods=n_steps, freq='M')
-
-    #     # Display the predictions
-    #     st.write("Predicted Sales for the next months:")
-    #     prediction_df = pd.DataFrame({'Date': forecast_dates, 'Predicted Sales': prediction})
-    #     st.line_chart(prediction_df.set_index('Date'))
-
-    # # Placeholder for XGBoost prediction
-    # st.subheader("XGBoost Model Prediction")
-
-    # # Function to generate XGBoost prediction
-    # def make_xgb_prediction(model, input_data):
-    #     # Ensure input_data is a valid DataFrame or NumPy array
-    #     prediction = model.predict(input_data)
-    #     return prediction
-
-    # # Assuming we need some input data for XGBoost
-    # if st.button("Make XGBoost Prediction"):
-    #     try:
-    #         # Example: Preparing input data (adjust as per your dataset and features)
-    #         input_data = data_lagged.drop('y', axis=1)  # Use your actual test data or features
-        
-    #         # Check if the model has been loaded
-    #         xgb_model = joblib.load('xgboost_model.pkl')
-        
-    #         # Make prediction
-    #         xgb_prediction = make_xgb_prediction(xgb_model, input_data)
-
-    #         # Display prediction results
-    #         st.write("Predicted Sales (XGBoost):")
-    #         st.write(xgb_prediction[:10])  # Display first 10 predictions as a sample
-
-    #     except Exception as e:
-    #         st.error(f"An error occurred: {e}")
-
-    # # Save and load models
-    # if st.button("Save Models"):
-    #     if model and 'xgb_model' in locals():
-    #         joblib.dump(model, 'sarima_model.pkl')
-    #         joblib.dump(xgb_model, 'xgboost_model.pkl')
-    #         st.success("Models saved successfully.")
-    #     else:
-    #         st.error("Models are not trained or loaded yet.")
-
-    # if st.button("Load Models"):
-    #     sarima_model = joblib.load('sarima_model.pkl')
-    #     xgb_model = joblib.load('xgboost_model.pkl')
-    #     st.success("Models loaded successfully.")
-
-
-    # try:
-    #     model = joblib.load('sarima_model.pkl')
-    # except Exception as e:
-    #     print(f"Error loading model: {e}")
-
-    import streamlit as st
-    import pandas as pd
 
 # Load the saved XGBoost model
     xgb_model = joblib.load('xgboost_model.pkl')
