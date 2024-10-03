@@ -11,8 +11,8 @@ The primary objectives of this project are to:
 
 ## III. Data Description
 - **Dataset(s):** Business data sourced from an Amazon Seller account.
-- **Data Sources:** The data will be pulled from various documents including CSV, TXT, and Excel files.
-- **Data Structure:** The data consists of multiple formats that require loading and potentially merging for comprehensive analysis.
+- **Data Sources:** The data will be pulled from various documents including CSV, TXT, and Excel files.(for now only one csv file to study)
+- **Data Structure:** The data consists of multiple formats that require loading, cleaning and potentially merging for comprehensive analysis.
 
 ## IV. Methodology
 The approach to accomplish the project objectives includes:
@@ -30,11 +30,11 @@ The approach to accomplish the project objectives includes:
 ## VI. Potential Challenges
 - **Challenges:**
   - Data cleaning may present challenges due to inconsistencies.
-  - Familiarizing with Streamlit for dashboard development. https://github.com/okld/streamlit-elements https://docs.streamlit.io/develop/api-reference
+  - Familiarizing with Streamlit for dashboard development. 
   
 - **Proposed Solutions:**
   - Load and clean each dataset systematically before analysis.
-  - Utilize resources and documentation to guide Streamlit usage.
+  - Utilize resources and documentation to guide Streamlit usage. https://github.com/okld/streamlit-elements https://docs.streamlit.io/develop/api-reference
 
 ## VII. Libraries Used
 The following libraries are utilized in this project:
@@ -46,12 +46,12 @@ The following libraries are utilized in this project:
 - `sklearn`: For machine learning and model evaluation.
 - `joblib`: For model loading.
 
-## VIII. Outcome
+## VIII. More work to be done
 The following are ongoing unresolved issues
 - Analyze two datasets: one focusing on sales and the other on net profits, to visualize and better understand the impact of Amazon's fees on product profitability.
 - Identify which products yield the highest net profits for sellers, allowing for informed decision-making regarding product focus.
--  We are working with two documents- excel and data from amazon and/or other platforms. We want to be able to merge the data from different platforms to the excel sheet at the end of every working day, that is Monday to Saturday ( Inventory and calculate net profit.) Consolidate data from different platforms.
--  Re-work the models for better results
+-  We are working with two documents- excel and data from amazon and/or other platforms. We want to be able to merge the data from different platforms to the excel sheet at the end of every working day, that is Monday to Saturday ( Inventory and calculate net profit.) Consolidate data from different platforms and automate process.
+-  Re-work the prediction models for better results
 
 ## Live App
 Check out the deployed version of the app [[here](https://your-streamlit-app-link)](https://ufitsales-testmodel-xh6wmc2nxdhrwwx9vkhrul.streamlit.app/)](https://ufitsales-testmodel-xh6wmc2nxdhrwwx9vkhrul.streamlit.app/).
